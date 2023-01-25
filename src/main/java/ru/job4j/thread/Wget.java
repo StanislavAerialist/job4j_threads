@@ -36,7 +36,6 @@ public class Wget implements Runnable {
                     start = currentTimeMillis();
                 }
                 fileOutputStream.write(dataBuffer, 0, bytesRead);
-                Thread.sleep(1000);
             }
         } catch (IOException e) {
             e.printStackTrace();
