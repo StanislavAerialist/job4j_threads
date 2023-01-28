@@ -11,16 +11,16 @@ public final class ParseFile {
     }
 
     public synchronized String content(Predicate<Character> filter) throws IOException {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         try (BufferedInputStream i = new BufferedInputStream(new FileInputStream(file))) {
             int data;
-            while ((data = i.read()) > 0) {
+            while ((data = i.read()) != -1) {
                 if (filter.test((char) data)) {
-                    output += (char) data;
+                    output.append((char) data);
                 }
             }
         }
-        return output;
+        return output.toString();
     }
 
     public synchronized String getContent() throws IOException {
