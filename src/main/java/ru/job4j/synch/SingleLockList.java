@@ -4,7 +4,6 @@ import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,7 +30,6 @@ public class SingleLockList<T> implements Iterable<T> {
     }
 
     private synchronized List<T> copy(List<T> origin) {
-        List<T> rsl = new ArrayList<>(origin);
-        return  Collections.synchronizedList(rsl);
+        return  new ArrayList<>(origin);
     }
 }
