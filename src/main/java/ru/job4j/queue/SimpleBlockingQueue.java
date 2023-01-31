@@ -30,9 +30,7 @@ public class SimpleBlockingQueue<T> {
             wait();
         }
         T rsl = queue.poll();
-        if (queue.size() == limit) {
-            notify();
-        }
+        notify();
         return rsl;
     }
 }
