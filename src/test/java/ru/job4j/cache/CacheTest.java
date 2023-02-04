@@ -27,7 +27,7 @@ class CacheTest {
         Base base1 = new Base(1, 5);
         base1.setName("User1");
         cache.add(base1);
-        Base base2 = new Base(1, 1);
+        Base base2 = new Base(1, 5);
         base2.setName("User2");
         boolean rsl = cache.update(base2);
         assertThat(rsl).isTrue();
