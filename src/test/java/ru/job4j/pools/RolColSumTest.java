@@ -3,10 +3,10 @@ package ru.job4j.pools;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutionException;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static ru.job4j.pools.RolColSum.Sums;
-import static ru.job4j.pools.RolColSum.sum;
 import static ru.job4j.pools.RolColSum.asyncSum;
+import static ru.job4j.pools.RolColSum.sum;
 
 class RolColSumTest {
 
@@ -18,7 +18,7 @@ class RolColSumTest {
         };
         Sums[] sum = sum(matrix);
         Sums[] asyncSum = asyncSum(matrix);
-        Sums expected = new RolColSum.Sums();
+        Sums expected = new Sums();
         expected.setColSum(6);
         expected.setRowSum(7);
 
@@ -35,7 +35,7 @@ class RolColSumTest {
         };
         Sums[] sum = sum(matrix);
         Sums[] asyncSum = asyncSum(matrix);
-        Sums expected = new RolColSum.Sums();
+        Sums expected = new Sums();
         expected.setColSum(12);
         expected.setRowSum(6);
 
