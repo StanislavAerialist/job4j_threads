@@ -45,6 +45,6 @@ public class Test {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         CompletableFuture<String> result = goToTrash().thenCompose(a -> buyProduct("Milk"));
-        result.get(); // wait calculations;
+        result.get();
     }
 }
